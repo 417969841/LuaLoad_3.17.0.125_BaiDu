@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#aa000000" >
+
+    <RelativeLayout
+        android:id="@+id/parent1"
+        android:layout_width="380dp"
+        android:layout_height="240dp"
+        android:layout_centerInParent="true"
+        android:paddingBottom="12dp" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ui_item_bg" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:text="发现新版本！"
+            android:textColor="#451900"
+            android:textSize="18dp"
+            android:visibility="gone" >
+        </TextView>
+
+        <RelativeLayout
+            android:id="@+id/rl_emigrated"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:padding="0dp" >
+
+            <TextView
+                android:id="@+id/tv_updata_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:padding="0dp" >
+
+                <RelativeLayout
+                    android:id="@+id/text_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="3dp" >
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="170dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="30dp" >
+
+                        <TextView
+                            android:id="@+id/tv_updata_down"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="检测到新版本【疯狂斗地主v2.27】\n文件大小：4.1M"
+                            android:textColor="#ffffff"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+                    </ScrollView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/text_layout"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="15dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_gift_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_2times_loading_reward" />
+					<TextView
+					    android:id="@+id/reward_text"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_toRightOf="@id/iv_gift_icon"
+					    android:text="更新奖励: "
+					    android:layout_centerInParent="true"
+					    android:textStyle="bold"
+					    android:textColor="#ffffff"
+					    />
+                    <TextView
+                        android:id="@+id/tv_updata_award"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/reward_text"
+                        android:text="20000金币 20元宝"
+                        android:layout_centerInParent="true"
+                        android:textStyle="bold"
+                        android:textColor="#FFD700" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_updata_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/rl_emigrated"
+            android:padding="0dp" >
+
+            <ImageButton
+                android:id="@+id/btn_right"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/btn_hall_kuaisukaishi"
+                android:shadowColor="#FF000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:src="@drawable/ui_2times_update_btn"
+                android:textColor="#ffffff" />
+
+            <ImageButton
+                android:id="@+id/btn_left"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/btn_hall_pinbi"
+                android:shadowColor="#FF000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:src="@drawable/ui_2times_loading_btn_cancel"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/parent1"
+        android:layout_alignTop="@id/parent1"
+        android:layout_marginLeft="-15dp"
+        android:layout_marginTop="-25dp"
+        android:background="@drawable/ic_2times_loading_label" />
+
+</RelativeLayout>

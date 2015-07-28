@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#aa000000" >
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="380dip"
+        android:layout_height="220dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ui_item_bg" >
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:text="温馨提示"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvUpdateMsg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:layout_margin="3dp"
+            android:gravity="center_horizontal"
+            android:text="建议您下载[斗地主新包4.0]获得最佳体验\n是否下载?" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/llBtn"
+            android:layout_below="@id/tvUpdateMsg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="2dp" >
+
+            <ProgressBar
+                android:id="@+id/pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="348dp"
+                android:layout_height="25dp"
+                android:layout_alignTop="@+id/tvProgress"
+                android:layout_centerHorizontal="true"
+                android:progressDrawable="@drawable/hall_reginfo_seekbar" />
+
+            <TextView
+                android:id="@+id/tvPro"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignLeft="@id/pb"
+                android:layout_alignParentBottom="@id/pb"
+                android:layout_alignRight="@id/pb"
+                android:layout_alignTop="@id/pb"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="0%"/>
+
+            <TextView
+                android:id="@+id/tvProgress"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:textColor="#5a2e00" />
+
+            <!--
+            android:progressDrawable="@drawable/hall_reginfo_seekbar"
+            android:layout_centerHorizontal="true"
+				android:progress="@drawable/ui_2times_loading_schedule_fg"
+				android:progressDrawable="@drawable/ui_2times_loading_schedule_bg"
+            -->
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp" >
+
+            <ImageButton
+                android:id="@+id/btnStop"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_gerenziliao0"
+                android:src="@drawable/ui_2times_loading_btn_cancel" />
+
+            <ImageButton
+                android:id="@+id/btnClose"
+                android:layout_width="155dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/btn_gerenziliao0"
+                android:src="@drawable/ui_2times_update_btn" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

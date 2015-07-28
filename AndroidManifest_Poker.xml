@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tongqu.client.poker"
+    android:versionCode="50331648"
+    android:versionName="3.00.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="8" />
+
+    <uses-feature android:glEsVersion="0x00020000" />
+
+    <application
+        android:allowBackup="true"
+        android:name="com.tongqu.client.poker.GameApplication"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+
+        <!-- 友盟渠道 -->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="@string/Umeng" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="554c73fd67e58e36d40053d9" >
+        </meta-data>
+
+        <!-- 设置TestIn AppKey -->
+        <meta-data
+            android:name="TESTIN_APPKEY"
+            android:value="5d8046991c2a9f91b308fd70564bc27a" />
+        <!-- 设置TestIn 渠道信息 -->
+        <meta-data
+            android:name="TESTIN_CHANNEL"
+            android:value="@string/Umeng" />
+
+        <activity
+            android:name="com.tongqu.client.poker.LoadActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wxe31d88efd12f8738" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tongqu.client.poker.TQGameMainScene"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tongqu.client.game.MatchAlarmPromptActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <!-- 新银联activity -->
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.UPPay" />
+        <activity
+            android:name="com.unionpay.uppay.PayActivityEx"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <!-- 同趣应用间广播 -->
+        <receiver android:name="com.tongqu.client.game.TqBroadCast" >
+            <intent-filter>
+                <action android:name="com.tongqu.intent.action.BROADCAST" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="mm.sms.purchasesdk.sms.SMSReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="aspire.iap.SMS_SEND_ACTIOIN" />
+                <action android:name="aspire.iap.SMS_DELIVERED_ACTION" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.pay.weixinpay.AppRegister" >
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+        <!-- 比赛闹钟相关 -->
+
+        <receiver android:name="com.tongqu.client.game.MatchAlarmBroadCast" >
+            <intent-filter>
+                <action android:name="com.tongqu.client.poker.alarm" />
+            </intent-filter>
+        </receiver>
+        <!--
+      	  移动短信验证相关
+        <receiver android:name=".SMSMobileBroadCast" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        -->
+        <activity
+            android:name="com.android.essdk.eyou.EPayActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+
+        <service android:name="com.android.essdk.eyou.PlateService" >
+        </service>
+
+        <receiver android:name="com.android.essdk.eyou.sms.MmsSmsReceiver" >
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+
+                <data android:mimeType="application/vnd.wap.mms-message" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.tongqu.client.poker.wxapi.WXEntryActivity"
+			android:exported="true"
+			android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <!-- 红软银贝壳配置开始 -->
+        <activity
+            android:name="com.unicom.unicomallsmspayment.SshellSMSMainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.unicom.unicomallsmspayment.SshellSMSSuccessActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.unicom.unicomallsmspayment.SshellSMSFaildActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.unicom.unicomallsmspayment.SshellSMSTimeOutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+
+        <receiver
+            android:name="mm.yp.purchasesdk.sms.SMSReceiver"
+            android:exported="false" >
+            <intent-filter android:priority="10000" >
+                <action android:name="aspire.iap.SMS_SEND_ACTIOIN" />
+                <action android:name="aspire.iap.SMS_DELIVERED_ACTION" />
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="INPUT_CHANNEL_ID" android:value="U100002" />
+
+        <meta-data
+            android:name="INPUT_CHANNEL_ID"
+            android:value="U100002" />
+
+        <!-- 红软银贝壳配置结束 -->
+
+        <service android:name="com.tongqu.client.game.DownLoadService" >
+        </service>
+    </application>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <!-- 允许程序读取外部存储，如SD卡上读文件 -->
+    <!-- 权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 新银联所用权限 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 手机钱包阅读手机短信权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+</manifest>

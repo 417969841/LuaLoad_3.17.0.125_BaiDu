@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="libs/umeng_sdk.jar"/>
+	<classpathentry kind="lib" path="libs/UPPayAssistEx.jar"/>
+	<classpathentry kind="lib" path="libs/UPPayPluginEx.jar"/>
+	<classpathentry kind="lib" path="libs/TestinAgent-ndk-v1.7.jar"/>
+	<classpathentry kind="lib" path="libs/epay.jar"/>
+	<classpathentry kind="lib" path="libs/libammsdk.jar"/>
+	<classpathentry kind="lib" path="libs/HPaySdk_TonqQu_20150417_RX1.0.0.jar"/>
+	<classpathentry kind="lib" path="libs/sshellAllSMSPayment.jar"/>
+	<classpathentry kind="lib" path="libs/MUltimode_UniPay_base.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/hpay_cancel_p" android:state_pressed="true"/>
+    <item android:drawable="@drawable/hpay_cancel" android:state_enabled="true"/>
+    <item android:drawable="@drawable/hpay_cancel" android:state_enabled="false"/>
+
+</selector>
